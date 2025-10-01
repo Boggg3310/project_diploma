@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Улучшенный анимированный заголовок</title>
+
+</head>
+
+<body>
+	<!-- Декоративные элементы -->
+	<div class="decoration"></div>
+	<div class="decoration"></div>
+	<div class="decoration"></div>
+	<div class="decoration"></div>
+
+	<!-- Частицы -->
+	<div class="particles" id="particles"></div>
+
+	<h1 class="animated-text">Дипломная работа</h1>
+
+	<script>
+		// Создание частиц
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 30;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            // Случайные начальные позиции и задержки анимации
+            const left = Math.random() * 100;
+            const delay = Math.random() * 15;
+            const duration = 10 + Math.random() * 10;
+            
+            particle.style.left = `${left}%`;
+            particle.style.animationDelay = `${delay}s`;
+            particle.style.animationDuration = `${duration}s`;
+            
+            // Случайный размер и непрозрачность
+            const size = 2 + Math.random() * 3;
+            const opacity = 0.3 + Math.random() * 0.4;
+            
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.opacity = opacity;
+            
+            particlesContainer.appendChild(particle);
+        }
+
+        // Оптимизация производительности
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedText = document.querySelector('.animated-text');
+            
+            // Добавляем will-change для оптимизации
+            animatedText.style.willChange = 'transform, background-position';
+        });
+	</script>
+</body>
+
+</html>
