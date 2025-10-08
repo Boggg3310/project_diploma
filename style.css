@@ -306,3 +306,46 @@
 				padding: 20px 30px;
 			}
 		}
+/* Стили для нового заголовка */
+.header-container {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.diploma-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Стили для градиентного текста */
+.figma-link {
+    margin: 20px 0;
+}
+
+.gradient-text {
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+    padding: 10px 20px;
+}
+
+/* Анимация градиента */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
